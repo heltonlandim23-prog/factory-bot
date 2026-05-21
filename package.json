@@ -1,0 +1,13 @@
+{
+  "name": "factory-calculator-bot",
+  "version": "2.0.0",
+  "description": "Factory Simulator calculator bot for Discord",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^17.4.2"
+  }
+}

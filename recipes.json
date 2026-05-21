@@ -1,0 +1,29 @@
+{
+  "iron_ore": {
+    "name": "Minério de Ferro",
+
+    "resource": true,
+
+    "miner": {
+      "tier": 0,
+      "output": 30
+    }
+  },
+
+  "iron_plate": {
+    "name": "Placa de Ferro",
+
+    "machine": {
+      "name": "Fornalha",
+      "tier": 1,
+      "output": 60
+    },
+
+    "ingredients": [
+      {
+        "item": "iron_ore",
+        "amount": 2
+      }
+    ]
+  }
+}
