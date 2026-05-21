@@ -1,0 +1,14 @@
+{
+  "help_title": "📘 Comandos del Bot",
+  "help_description": "Usa los comandos de abajo para calcular objetos y ver información.",
+  "calc_usage": "Usa: !calc nombre_del_objeto cantidad",
+  "item_not_found": "❌ Objeto no encontrado.",
+  "invalid_quantity": "❌ Cantidad inválida.",
+  "language_changed": "✅ Idioma cambiado a Español.",
+  "unknown_command": "❌ Comando desconocido. Usa !help.",
+  "loading": "⏳ Calculando...",
+  "result_title": "📦 Resultado del cálculo",
+  "required_items": "Objetos necesarios",
+  "final_product": "Producto final",
+  "error": "❌ Ocurrió un error."
+}

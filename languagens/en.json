@@ -1,0 +1,14 @@
+{
+  "help_title": "📘 Bot Commands",
+  "help_description": "Use the commands below to calculate items and view information.",
+  "calc_usage": "Use: !calc item_name quantity",
+  "item_not_found": "❌ Item not found.",
+  "invalid_quantity": "❌ Invalid quantity.",
+  "language_changed": "✅ Language changed to English.",
+  "unknown_command": "❌ Unknown command. Use !help.",
+  "loading": "⏳ Calculating...",
+  "result_title": "📦 Calculation result",
+  "required_items": "Required items",
+  "final_product": "Final product",
+  "error": "❌ An error occurred."
+}

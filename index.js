@@ -1,3 +1,23 @@
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+    res.send("Bot online");
+});
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Servidor web ativo");
+});
+
+const pt = require("./languages/pt.json");
+const en = require("./languages/en.json");
+const es = require("./languages/es.json");
+
+const languages = { pt, en, es };
+
+let currentLanguage = "pt";
+const lang = languages[currentLanguage];
+
 require("dotenv").config();
 
 const { Client, GatewayIntentBits } = require("discord.js");
@@ -418,20 +438,20 @@ client.on("messageCreate", async (message) => {
     }
 
     if (content === "!help") {
-        return message.reply([
-            "```txt",
-            "COMANDOS:",
-            "!ping",
-            "!help",
-            "!itens",
-            "!tier 1",
-            "!calc iron_plate 60",
-            "",
-            "EXEMPLO:",
-            "!calc iron_gear 60",
-            "```"
-        ].join("\n"));
-    }
+    return message.reply([
+        "```txt",
+        lang.help_title,
+        "",
+        "!ping",
+        "!help",
+        "!itens",
+        "!tier 1",
+        "!calc iron_plate 60",
+        "",
+        lang.help_description,
+        "```"
+    ].join("\n"));
+}
 
     if (content === "!itens") {
         let text = "```txt\nITENS CADASTRADOS:\n\n";
