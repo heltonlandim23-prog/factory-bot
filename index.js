@@ -1,3 +1,6 @@
+console.log("Iniciando bot...");
+console.log("Token existe?", !!process.env.DISCORD_TOKEN);
+
 const express = require("express");
 const app = express();
 
