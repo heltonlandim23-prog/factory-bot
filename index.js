@@ -16,7 +16,9 @@ const es = require("./languages/es.json");
 const languages = { pt, en, es };
 
 let currentLanguage = "pt";
-const lang = languages[currentLanguage];
+function getLang() {
+    return languages[currentLanguage] || languages.pt;
+}
 
 require("dotenv").config();
 
@@ -432,10 +434,21 @@ client.on("messageCreate", async (message) => {
     if (message.author.bot) return;
 
     const content = message.content.trim();
+    const lang = getLang();
 
-    if (content === "!ping") {
-        return message.reply("pong");
+    if (content.startsWith("!lang")) {
+    const args = content.split(" ");
+    const selected = args[1];
+
+    if (!["pt", "en", "es"].includes(selected)) {
+        return message.reply("```txt\nUse: !lang pt | !lang en | !lang es\n```");
     }
+
+    currentLanguage = selected;
+    const newLang = getLang();
+
+    return message.reply("```txt\n" + newLang.language_changed + "\n```");
+}
 
     if (content === "!help") {
     return message.reply([
@@ -448,6 +461,11 @@ client.on("messageCreate", async (message) => {
         "!tier 1",
         "!calc iron_plate 60",
         "",
+        "🌐 Idiomas:",
+        "!lang pt",
+        "!lang en",
+        "!lang es",
+              "",
         lang.help_description,
         "```"
     ].join("\n"));
